@@ -1,26 +1,16 @@
-import React, { useState, useEffect } from "react";
-//import { Route } from "react-router-dom";
-import axios from "axios";
+import React from "react";
+import { Route } from "react-router-dom";
 import Header from "./components/Header.js";
+import WelcomePage from "./components/WelcomePage.js"
+import CharacterList from './components/CharacterList.js';
 
 
 export default function App() {
-  const [chars, setChars] = useState([]);
-
-  useEffect(() => {
-    axios
-    .get('https://rickandmortyapi.com/api/character/')
-    .then(response => {
-      console.log(response.data.results);
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  }, []);
-  
   return (
     <main>
       <Header />
+      <Route exact path="/" component={WelcomePage} />
+      <Route path="/characters" component={CharacterList} />
     </main>
   );
 }
