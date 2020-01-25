@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Header from "./components/Header.js";
 import WelcomePage from "./components/WelcomePage.js"
-import CharacterList from './components/CharacterList.js';
+import CharacterList from "./components/CharacterList.js";
 
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
     <main>
       <Header />
       <Route exact path="/" component={WelcomePage} />
-      <Route path="/characters" component={CharacterList} />
+      <Route exact path="/Characters" component={CharacterList} />
     </main>
   );
 }
